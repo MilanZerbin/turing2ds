@@ -28,8 +28,10 @@ Install [Julia](https://julia.org) and open a Julia Shell. Under NixOs for examp
 ```
 nix-shell -p julia-bin --run julia
 ```
-Compile and Load the code
+Install dependencies, compile and Load the code
 ```
+import Pkg; pkg.add("CairoMakie")
+import Pkg; pkg.add("DynamicalSystems")
 :l main.jl
 ```
 Enjoy!
