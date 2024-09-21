@@ -24,7 +24,7 @@ Clone the Repo:
 git clone git@git.rz.uni-augsburg.de:zerbinmi/turing2ds.git
 cd turing2ds
 ```
-Open a Julia shell
+Install [Julia](https://julia.org) and open a Julia Shell. Under NixOs for example, run 
 ```
 nix-shell -p julia-bin --run julia
 ```
@@ -36,7 +36,7 @@ Enjoy!
 
 
 ## Collaborators
-The code is mainly written by [Milan Zerbin](https://milan.zerb.in) and [Søren Dyhr](https://sites.google.com/upc.edu/complexfluids/who-are-we/s%C3%B8ren-istv%C3%A1n-adorj%C3%A1n-dyhr). We thank Jessica Plner for contributions.
+The code is mainly written by [Milan Zerbin](https://milan.zerb.in) and [Søren Dyhr](https://sites.google.com/upc.edu/complexfluids/who-are-we/s%C3%B8ren-istv%C3%A1n-adorj%C3%A1n-dyhr). We thank Jessica Ploner for contributions.
 
 ## License
 This Project is licensed under CC-BY-SA License. You may freely distribute, copy and build upon the code, except for commercial use.
