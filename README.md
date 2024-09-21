@@ -36,7 +36,7 @@ Enjoy!
 
 
 ## Collaborators
-The code is mainly written by [Milan Zerbin](https://milan.zerb.in) and [Søren Dyhr](https://cab.bac.cat). We thank Jessica Plner for contributions.
+The code is mainly written by [Milan Zerbin](https://milan.zerb.in) and [Søren Dyhr](https://sites.google.com/upc.edu/complexfluids/who-are-we/s%C3%B8ren-istv%C3%A1n-adorj%C3%A1n-dyhr). We thank Jessica Plner for contributions.
 
 ## License
 This Project is licensed under CC-BY-SA License. You may freely distribute, copy and build upon the code, except for commercial use.
