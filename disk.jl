@@ -1,4 +1,5 @@
 using DynamicalSystems
+using CairoMakie
 
 # Rotates unit disk by angle "theta" 
 function rotationmap(u0=zeros(2); theta = 1.0)
@@ -16,4 +17,7 @@ function moebius(u_0=zeros(2); a = 1.0, b = -1.0, theta = 1.0)
     return DiscreteDS(u0, moebius_eom; parameters = [a, b, theta])
 end
 
+function f(initialu)
+    return evolve(moebius, 1 [,initialu])
 
+fig, ax, pl = streamplot(f, -1.0..1.0, -1.0..1.0, colormap = :magma)
