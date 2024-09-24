@@ -8,12 +8,11 @@ In ... , Moore showed in ...
 
 ## The Project
 
-The code is separated into four main components:
+The code is separated into three main components:
 
 - [ ] A library defining Turing Machines and visualizing them
 - [ ] A library defining generalized shift dynamics and visualizing them
 - [ ] A library defining PL-fold maps on the Unit Square and visualizing them
-- [ ] A library defining Dynamical Systems on the Disk and visualizing them
 
 On top of this sits the main file, which upon execution guides the user to defining a Turing-Machine and providing an Input Band. Upon finishing, it will provide an Animation of said Turing Machine in all 4 described Versions.
  
@@ -21,24 +20,22 @@ On top of this sits the main file, which upon execution guides the user to defin
 
 Clone the Repo:
 ```
-git clone git@git.rz.uni-augsburg.de:zerbinmi/turing2ds.git
+git clone git@github.com:MilanZerbin/turing2ds.git
 cd turing2ds
 ```
-Install [Julia](https://julia.org) and open a Julia Shell. Under NixOs for example, run 
+Install [Haskell](https://www.haskell.org/) and open a Haskell Shell such as [GHCi](https://downloads.haskell.org/ghc/latest/docs/users_guide/ghci.html) . Under NixOs for example, run 
 ```
-nix-shell -p julia-bin --run julia
+nix-shell -p ghc --run ghci
 ```
 Install dependencies, compile and Load the code
 ```
-import Pkg; pkg.add("CairoMakie")
-import Pkg; pkg.add("DynamicalSystems")
-:l main.jl
+:l main.hs
 ```
 Enjoy!
 
 
 ## Collaborators
-The code is mainly written by [Milan Zerbin](https://milan.zerb.in) and [Søren Dyhr](https://sites.google.com/upc.edu/complexfluids/who-are-we/s%C3%B8ren-istv%C3%A1n-adorj%C3%A1n-dyhr). We thank Jessica Ploner for contributions.
+The code is mainly written by [Milan Zerbin](https://milan.zerb.in), [Søren Dyhr](https://sites.google.com/upc.edu/complexfluids/who-are-we/s%C3%B8ren-istv%C3%A1n-adorj%C3%A1n-dyhr) and Jessica Ploner.
 
 ## License
-This Project is licensed under CC-BY-SA License. You may freely distribute, copy and build upon the code, except for commercial use.
+This Project is licensed under [GNU GPL v3.0 License](https://www.gnu.org/licenses/gpl-3.0.en.html). You may freely distribute, copy and build upon the code, except for non free use.
