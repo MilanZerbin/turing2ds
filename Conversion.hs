@@ -34,9 +34,16 @@ decodeMove x
     | x == Just True = 2
     | x == Just False = -2
 
+
+-- The conversion map from moores Paper (more or less)
+--  Looks at the State (i,ii) and the current position (r,rr)
+--      saved on the Band, converts them to State and MaybeBool again.
+--  Then caculates the StepsizeFunction as what the RoL-Function tells
+--  Then calculates the ModifyFunction as a sort of shuffle 
+--      So that after moving the state is again in the same place.
 convertComputer :: TuringMachine -> ShiftComputer
 convertComputer (TuringMachine (StateUpdate s) (RightOrLeft m) (WriteFunction w)) = ShiftComputer (StepsizeFunction g) (ModifyFunction f) where
-    g (BiInfSeq (i:ii:ls) (r:rr:rs)) = decodeMove (m (depurify (r,rr)) (depurify (i,ii)))
+    g (BiInfSeq (i:ii:ls) (r:rr:rs)) = decodeMove (m (depurify (r,rr)) (State (depurify (i,ii))))
     f (BiInfSeq (i:ii:l:ll:ls) (r:rr:rs))
         | (m (depurify (r,rr)) (State (depurify (i,ii)))) == Just True =  BiInfSeq ((purify (map tellState [s (depurify (r,rr)) (State (depurify (i,ii)))])) ++ (purify [w (State (depurify (i,ii))) (depurify (r,rr))]) ++ (l:ll:ls)) (rs)
         | (m (depurify (r,rr)) (State (depurify (i,ii)))) == Just False  =  BiInfSeq ((purify (map tellState [s (depurify (r,rr)) (State (depurify (i,ii)))])) ++ ls) ([ll,l] ++ (purify [w (State (depurify (i,ii))) (depurify (r,rr))]) ++ rs)
