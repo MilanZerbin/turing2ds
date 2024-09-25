@@ -48,3 +48,7 @@ convertComputer (TuringMachine (StateUpdate s) (RightOrLeft m) (WriteFunction w)
         | (m (depurify (r,rr)) (State (depurify (i,ii)))) == Just True =  BiInfSeq ((purify (map tellState [s (depurify (r,rr)) (State (depurify (i,ii)))])) ++ (purify [w (State (depurify (i,ii))) (depurify (r,rr))]) ++ (l:ll:ls)) (rs)
         | (m (depurify (r,rr)) (State (depurify (i,ii)))) == Just False  =  BiInfSeq ((purify (map tellState [s (depurify (r,rr)) (State (depurify (i,ii)))])) ++ ls) ([ll,l] ++ (purify [w (State (depurify (i,ii))) (depurify (r,rr))]) ++ rs)
         | (m (depurify (r,rr)) (State (depurify (i,ii)))) == Nothing  =  BiInfSeq ((purify (map tellState [s (depurify (r,rr)) (State (depurify (i,ii)))])) ++ (l:ll:ls)) ((purify [w (State (depurify (i,ii))) (depurify (r,rr))]) ++ rs)
+--- REMARK : This code is ugly as fck, there is urgent need for a rework.
+-- Maybe using Monads more, one could make it more readable?
+-- Or introducing a "let... in " clause?
+--  Anyways: TODO
